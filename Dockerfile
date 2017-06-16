@@ -2,6 +2,7 @@ FROM nvidia/cuda:8.0-cudnn6-devel-ubuntu14.04
 LABEL maintainer caffe-maint@googlegroups.com
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
+        unzip \
         build-essential \
         cmake \
         git \
