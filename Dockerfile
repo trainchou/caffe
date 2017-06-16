@@ -43,7 +43,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     rm -rf /var/lib/apt/lists/*
 
 COPY opencv.zip /opt/
-RUN cd /opt && unzip opencv.zip && cd opencv-3.2.0 && mkdir build && cd build
+#RUN cd /opt && unzip opencv.zip && cd opencv-3.2.0 && mkdir build && cd build
 #RUN cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D WITH_TBB=ON -D BUILD_NEW_PYTHON_SUPPORT=ON -D WITH_V4L=ON -D WITH_QT=OFF -D WITH_OPENGL=ON .. && \
 #    make -j16 && make install && /bin/bash -c 'echo "/usr/local/lib" > /etc/ld.so.conf.d/opencv.conf' && ldconfig
 
