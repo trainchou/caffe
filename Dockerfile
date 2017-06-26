@@ -39,7 +39,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         libopenblas-dev \
         python-pip \
         python-setuptools \
-        python-scipy && \
+        python-scipy \
+        liblapacke-dev \
+        checkinstall &&\
     rm -rf /var/lib/apt/lists/*
 
 ADD opencv.tar /opt/
