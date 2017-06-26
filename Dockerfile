@@ -42,8 +42,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         python-scipy && \
     rm -rf /var/lib/apt/lists/*
 
-ADD opencv.zip /opt/
-RUN cd /opt && unzip opencv.zip && cd opencv-3.2.0 && mkdir build && cd build
+ADD opencv.tar /opt/
+RUN cd /opt/opencv-3.2.0 && mkdir build && cd build
 RUN cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D WITH_TBB=ON -D BUILD_NEW_PYTHON_SUPPORT=ON -D WITH_V4L=ON -D WITH_QT=OFF -D WITH_IPP=OFF -D WITH_OPENGL=ON .. && \
     make -j16 && make install && /bin/bash -c 'echo "/usr/local/lib" > /etc/ld.so.conf.d/opencv.conf' && ldconfig
 
