@@ -47,8 +47,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 ADD opencv.tar /opt/
 RUN cd /opt/opencv-3.2.0 && mkdir build
 WORKDIR /opt/opencv-3.2.0/build
-RUN cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D WITH_LAPACK=OFF -D WITH_TBB=ON -D BUILD_NEW_PYTHON_SUPPORT=ON -D WITH_V4L=ON -D WITH_QT=OFF -D WITH_IPP=OFF -D WITH_OPENGL=ON /opt/opencv-3.2.0/ && \
-    make -j16 && make install && /bin/bash -c 'echo "/usr/local/lib" > /etc/ld.so.conf.d/opencv.conf' && ldconfig
+RUN cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D WITH_LAPACK=OFF -D WITH_TBB=ON -D BUILD_NEW_PYTHON_SUPPORT=ON -D WITH_V4L=ON -D WITH_QT=OFF -D WITH_IPP=OFF -D WITH_OPENGL=ON /opt/opencv-3.2.0/
+#    make -j16 && make install && /bin/bash -c 'echo "/usr/local/lib" > /etc/ld.so.conf.d/opencv.conf' && ldconfig
 
 #WORKDIR $CAFFE_ROOT
 
