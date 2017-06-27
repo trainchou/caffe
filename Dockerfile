@@ -41,8 +41,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         python-setuptools \
         python-scipy \
         liblapacke-dev \
-        checkinstall \
-        numpy && \
+        checkinstall && \
     rm -rf /var/lib/apt/lists/*
 
 ADD opencv.tar /opt/
